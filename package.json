@@ -1,0 +1,24 @@
+{
+  "name": "bullspeak",
+  "version": "1.0.0",
+  "description": "The Amusing ASCII Talking App",
+  "main": "dist/bin/bullspeak.js",
+  "bin": {
+    "bullspeak": "./dist/bin/bullspeak.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/bin/bullspeak.js"
+  },
+  "author": {
+    "name": "Semih Arslan",
+    "email": "arslan_semih@yahoo.com",
+    "url": "https://tr.linkedin.com/in/semih-arslan-b06693189"
+  },
+  "keywords": ["ASCII Art", "Terminal App", "Talking Bull", "Talking Animals", "Command-Line Fun", "Whimsical", "Humor", "Creative Messaging", "Amusing Characters", "Linux Utility", "Cowsay Alternative", "Command-Line Entertainment", "Customizable Speech", "Fun Easter Eggs", "Character Animation", "Playful Terminal", "Quirky Interaction", "ASCII Characters", "Cow Jokes", "Surprise Messages"],
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@types/node": "^20.4.8",
+    "typescript": "^5.1.6"
+  }
+}
