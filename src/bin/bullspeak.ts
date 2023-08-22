@@ -1,6 +1,9 @@
 import * as readline from "readline";
 import { BalloonBuilder } from "../lib/class/BalloonBuilder";
-
+import { Animal } from "../lib/interface/Animal";
+import { Cat } from "../lib/class/animals/Cat";
+import { Fish } from "../lib/class/animals/Fish";
+import { Bull } from "../lib/class/animals/Bull";
 async function main() {
   const stdin = process.stdin;
 
@@ -19,18 +22,20 @@ async function main() {
     lines.push(line);
   }
 
-   const bull = `  \\   (__)
-   \\  (oo)\\_______
-      (__)\\       )\\/\\
-           ||----w |
-           ||     ||
-    `;
+  const animalTypes = {
+    cat: Cat,
+    fish: Fish,
+    bull: Bull,
+  };
 
-    const builder = new BalloonBuilder(lines);
+  const animalClass = new animalTypes["bull"]();
+  const animal = animalClass.getMessage();
 
-    const balloon = builder.buildBalloon();
+  const builder = new BalloonBuilder(lines);
+  const balloon = builder.buildBalloon();
+
   console.log(balloon);
-  console.log(bull);
+  console.log(animal);
   console.log();
 }
 
