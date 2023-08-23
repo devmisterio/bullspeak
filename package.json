@@ -1,6 +1,6 @@
 {
   "name": "bullspeak",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Amusing ASCII Talking App",
   "main": "dist/bin/bullspeak.js",
   "bin": {

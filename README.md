@@ -50,6 +50,7 @@ Bullspeak comes with three different animals, each with its own ASCII art messag
 - Cat
 - Fish
 - Bull
+
 You can choose which animal's message you want to display using the **-a** or **--animal** option when running the command.
 
 ## Example Output
