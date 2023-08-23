@@ -1,5 +1,5 @@
 import * as readline from "readline";
-import * as yargs from "yargs";
+import yargs from 'yargs/yargs';
 
 import { BalloonBuilder } from "../lib/class/BalloonBuilder";
 
@@ -15,22 +15,21 @@ async function main() {
     return;
   }
 
-  const argv = yargs
-    .scriptName("bullspeak")
-    .usage("Usage: <cmd> | $0 -a animal")
-    .example("$0 -a cat", "Show a cat speaking")
-    .option("a", {
-      alias: "animal",
-      describe: "Animal to show",
-      type: "string",
-      choices: ["cat", "fish", "bull"],
-      default: "bull",
-    })
-    .describe("help", "Show help")
-    .describe("version", "Show version number.")
-    .epilog("copyright 2023").argv;
+  const argv = yargs(process.argv.slice(2))
+    .scriptName('bullspeak')
+    .usage('Usage: <cmd> | $0 -a animalName')
+    .options({
+      a: {
+        alias: 'animal',
+        describe: 'Animal to show',
+        type: 'string',
+        choices: ['cat', 'fish', 'bull'],
+        default: 'bull',
+      },
+    }).parseSync();
 
-  console.log(argv);
+  const animalName = argv.a;
+
 
   const lines: string[] = [];
   const rl = readline.createInterface({
@@ -47,7 +46,7 @@ async function main() {
     bull: Bull,
   };
 
-  const animalClass = new animalTypes["bull"]();
+  const animalClass = new animalTypes[animalName as keyof typeof animalTypes]();
   const animal = animalClass.getMessage();
 
   const builder = new BalloonBuilder(lines);
