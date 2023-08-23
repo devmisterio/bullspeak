@@ -1,11 +1,9 @@
-import * as readline from "readline";
+#! /usr/bin/env node
+
 import yargs from 'yargs/yargs';
+import { getBalloonAndText } from "../lib/bullspeak";
+import { getInputLines, printBalloonAndText } from "../lib/utils/handle";
 
-import { BalloonBuilder } from "../lib/class/BalloonBuilder";
-
-import { Cat } from "../lib/class/animals/Cat";
-import { Fish } from "../lib/class/animals/Fish";
-import { Bull } from "../lib/class/animals/Bull";
 async function main() {
   const stdin = process.stdin;
 
@@ -30,31 +28,10 @@ async function main() {
 
   const animalName = argv.a;
 
+  const lines: string[] = await getInputLines(stdin);
 
-  const lines: string[] = [];
-  const rl = readline.createInterface({
-    input: stdin,
-  });
-
-  for await (const line of rl) {
-    lines.push(line);
-  }
-
-  const animalTypes = {
-    cat: Cat,
-    fish: Fish,
-    bull: Bull,
-  };
-
-  const animalClass = new animalTypes[animalName as keyof typeof animalTypes]();
-  const animal = animalClass.getMessage();
-
-  const builder = new BalloonBuilder(lines);
-  const balloon = builder.buildBalloon();
-
-  console.log(balloon);
-  console.log(animal);
-  console.log();
+  const result = getBalloonAndText(animalName, lines);
+  printBalloonAndText(result);
 }
 
 main();
