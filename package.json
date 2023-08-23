@@ -15,10 +15,35 @@
     "email": "arslan_semih@yahoo.com",
     "url": "https://tr.linkedin.com/in/semih-arslan-b06693189"
   },
-  "keywords": ["ASCII Art", "Terminal App", "Talking Bull", "Talking Animals", "Command-Line Fun", "Whimsical", "Humor", "Creative Messaging", "Amusing Characters", "Linux Utility", "Cowsay Alternative", "Command-Line Entertainment", "Customizable Speech", "Fun Easter Eggs", "Character Animation", "Playful Terminal", "Quirky Interaction", "ASCII Characters", "Cow Jokes", "Surprise Messages"],
+  "keywords": [
+    "ASCII Art",
+    "Terminal App",
+    "Talking Bull",
+    "Talking Animals",
+    "Command-Line Fun",
+    "Whimsical",
+    "Humor",
+    "Creative Messaging",
+    "Amusing Characters",
+    "Linux Utility",
+    "Cowsay Alternative",
+    "Command-Line Entertainment",
+    "Customizable Speech",
+    "Fun Easter Eggs",
+    "Character Animation",
+    "Playful Terminal",
+    "Quirky Interaction",
+    "ASCII Characters",
+    "Cow Jokes",
+    "Surprise Messages"
+  ],
   "license": "GPL-3.0",
   "dependencies": {
     "@types/node": "^20.4.8",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/yargs": "^17.0.24"
   }
 }
